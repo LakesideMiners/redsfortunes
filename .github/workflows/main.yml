@@ -26,9 +26,10 @@ jobs:
       - name: install strfile
         run: sudo apt-get install -y fortune
         
-        # Remove the Old .dat file, pipe everything to /dev/null to supress error if the file is not there. 
+        # Remove the Old .dat file,
       - name: remove old .dat file
-        run: rm postive.dat 2> /dev/null
+        run: rm postive.dat
+        continue-on-error: true
         
         # run strfile on the postive file, use loops for more files in the future?
       - name: run strfile
