@@ -44,3 +44,4 @@ jobs:
           git add *
           git commit -am "creating strfiles"
           git push
+        continue-on-error: true
