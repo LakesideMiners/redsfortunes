@@ -24,7 +24,7 @@ jobs:
 
       # install strfile, its part of mod-fortune
       - name: install strfile
-        run: sudo apt-get install -y mod-fortune
+        run: sudo apt-get install -y fortune
         
         # Remove the Old .dat file, pipe everything to /dev/null to supress error if the file is not there. 
       - name: remove old .dat file
