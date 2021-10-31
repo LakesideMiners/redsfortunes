@@ -22,13 +22,19 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # install strfile
+      # install strfile, its part of mod-fortune
       - name: install strfile
-        run: sudo apt-get install -y strfile
+        run: sudo apt-get install -y mod-fortune
+        
+        # Remove the Old .dat file, pipe everything to /dev/null to supress error if the file is not there. 
       - name: remove old .dat file
         run: rm postive.dat 2> /dev/null
+        
+        # run strfile on the postive file, use loops for more files in the future?
       - name: run strfile
         run: strfile postive
+        
+        # Now we push the change
       - name: Push The File
         run: |
           git config --global user.name 'LakesideMiners'
